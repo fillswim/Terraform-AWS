@@ -7,32 +7,32 @@ resource "aws_instance" "my_server_web" {
     Name = "Server-Web"
   }
 
-  depends_on = [ aws_instance.my_server_db ]
+  # depends_on = [ aws_instance.my_server_db ]
   
 }
 
-resource "aws_instance" "my_server_app" {
-  ami                    = "ami-08188dffd130a1ac2" # Amazon Linux 2023 AMI
-  instance_type          = "t2.micro"
-  vpc_security_group_ids = [aws_security_group.my_webserver.id] # Привязка Security Group
+# resource "aws_instance" "my_server_app" {
+#   ami                    = "ami-08188dffd130a1ac2" # Amazon Linux 2023 AMI
+#   instance_type          = "t2.micro"
+#   vpc_security_group_ids = [aws_security_group.my_webserver.id] # Привязка Security Group
 
-  tags = {
-    Name = "Server-Application"
-  }
+#   tags = {
+#     Name = "Server-Application"
+#   }
 
-  depends_on = [ aws_instance.my_server_db ]
+#   depends_on = [ aws_instance.my_server_db ]
 
-}
+# }
 
-resource "aws_instance" "my_server_db" {
-  ami                    = "ami-08188dffd130a1ac2" # Amazon Linux 2023 AMI
-  instance_type          = "t2.micro"
-  vpc_security_group_ids = [aws_security_group.my_webserver.id] # Привязка Security Group
+# resource "aws_instance" "my_server_db" {
+#   ami                    = "ami-08188dffd130a1ac2" # Amazon Linux 2023 AMI
+#   instance_type          = "t2.micro"
+#   vpc_security_group_ids = [aws_security_group.my_webserver.id] # Привязка Security Group
 
-  tags = {
-    Name = "Server-Database"
-  }
-}
+#   tags = {
+#     Name = "Server-Database"
+#   }
+# }
 
 resource "aws_security_group" "my_webserver" {
   name = "My Security Group"
