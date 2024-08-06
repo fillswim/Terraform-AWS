@@ -40,14 +40,14 @@ data "aws_vpcs" "my_vpcs" {}
 
 # =============================== Поиск instance ===============================
 
-data "aws_instance" "my_instance" {
+# data "aws_instance" "my_instance" {
 
-  filter {
-    name   = "tag:Name"
-    values = ["TestServer"]
-  }
+#   filter {
+#     name   = "tag:Name"
+#     values = ["TestServer"]
+#   }
 
-}
+# }
 
 # output "my_instance_id" {
 #   value = data.aws_instance.my_instance.id
@@ -67,13 +67,13 @@ data "aws_vpc" "frankfurt_vpc" {
 
 }
 
-# output "frankfurt_vpc_id" {
-#   value = data.aws_vpc.frankfurt_vpc.id
-# }
+output "frankfurt_vpc_id" {
+  value = data.aws_vpc.frankfurt_vpc.id
+}
 
-# output "frankfurt_vpc_cidr_block" {
-#   value = data.aws_vpc.frankfurt_vpc.cidr_block
-# }
+output "frankfurt_vpc_cidr_block" {
+  value = data.aws_vpc.frankfurt_vpc.cidr_block
+}
 
 # ======================= Добавление aws_subnet по vpc.id ======================
 
