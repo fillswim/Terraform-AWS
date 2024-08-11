@@ -1,3 +1,3 @@
-# Lesson-15
+# Lesson-16
 
-21 - Lesson-15 - Запуск локальных команд - exec-local
+22 - Lesson-16 - Генерация паролей, их хранение в SSM Parameter Store и пример использования
