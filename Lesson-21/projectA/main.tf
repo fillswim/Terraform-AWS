@@ -5,7 +5,8 @@ module "vpc-default" {
 }
 
 module "vpc-dev" {
-  source   = "../modules/aws_network"
+  # source   = "../modules/aws_network"
+  source   = "github.com/fillswim/Terraform-AWS.git//Modules/aws_network"
   env      = "development"
   vpc_cidr = "10.100.0.0/16"
   public_subnet_cidrs = [
@@ -16,7 +17,8 @@ module "vpc-dev" {
 }
 
 module "vpc-prod" {
-  source   = "../modules/aws_network"
+  # source   = "../modules/aws_network"
+  source   = "github.com/fillswim/Terraform-AWS.git//Modules/aws_network"
   env      = "production"
   vpc_cidr = "10.10.0.0/16"
   public_subnet_cidrs = [
@@ -32,7 +34,8 @@ module "vpc-prod" {
 }
 
 module "vpc-test" {
-  source   = "../modules/aws_network"
+  # source   = "../modules/aws_network"
+  source   = "github.com/fillswim/Terraform-AWS.git//Modules/aws_network"
   env      = "production"
   vpc_cidr = "10.10.0.0/16"
   public_subnet_cidrs = [
